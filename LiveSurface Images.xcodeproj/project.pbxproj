@@ -13,6 +13,10 @@
 		5EAD80D823377F1800E10181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD80D723377F1800E10181 /* Assets.xcassets */; };
 		5EAD80DB23377F1800E10181 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD80DA23377F1800E10181 /* Preview Assets.xcassets */; };
 		5EAD80DE23377F1800E10181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD80DC23377F1800E10181 /* LaunchScreen.storyboard */; };
+		5EAD80E92337807700E10181 /* LiveSurfaceImagesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD80E62337807700E10181 /* LiveSurfaceImagesError.swift */; };
+		5EAD80EA2337807700E10181 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD80E72337807700E10181 /* Responses.swift */; };
+		5EAD80EB2337807700E10181 /* LiveSurfaceImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD80E82337807700E10181 /* LiveSurfaceImagesFetcher.swift */; };
+		5EAD80EF233780CD00E10181 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD80EE233780CD00E10181 /* Parsing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		5EAD80DA23377F1800E10181 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5EAD80DD23377F1800E10181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EAD80DF23377F1800E10181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EAD80E62337807700E10181 /* LiveSurfaceImagesError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveSurfaceImagesError.swift; sourceTree = "<group>"; };
+		5EAD80E72337807700E10181 /* Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		5EAD80E82337807700E10181 /* LiveSurfaceImagesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveSurfaceImagesFetcher.swift; sourceTree = "<group>"; };
+		5EAD80EE233780CD00E10181 /* Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,8 @@
 			children = (
 				5EAD80D123377F1400E10181 /* AppDelegate.swift */,
 				5EAD80D323377F1400E10181 /* SceneDelegate.swift */,
+				5EAD80EC233780CD00E10181 /* Utilities */,
+				5EAD80E52337807700E10181 /* LSImagesApi */,
 				5EAD80D523377F1400E10181 /* ContentView.swift */,
 				5EAD80D723377F1800E10181 /* Assets.xcassets */,
 				5EAD80DC23377F1800E10181 /* LaunchScreen.storyboard */,
@@ -73,6 +83,32 @@
 				5EAD80DA23377F1800E10181 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5EAD80E52337807700E10181 /* LSImagesApi */ = {
+			isa = PBXGroup;
+			children = (
+				5EAD80E62337807700E10181 /* LiveSurfaceImagesError.swift */,
+				5EAD80E72337807700E10181 /* Responses.swift */,
+				5EAD80E82337807700E10181 /* LiveSurfaceImagesFetcher.swift */,
+			);
+			path = LSImagesApi;
+			sourceTree = "<group>";
+		};
+		5EAD80EC233780CD00E10181 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5EAD80ED233780CD00E10181 /* Parsing */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5EAD80ED233780CD00E10181 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				5EAD80EE233780CD00E10181 /* Parsing.swift */,
+			);
+			path = Parsing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAD80EF233780CD00E10181 /* Parsing.swift in Sources */,
+				5EAD80EA2337807700E10181 /* Responses.swift in Sources */,
+				5EAD80E92337807700E10181 /* LiveSurfaceImagesError.swift in Sources */,
 				5EAD80D223377F1400E10181 /* AppDelegate.swift in Sources */,
+				5EAD80EB2337807700E10181 /* LiveSurfaceImagesFetcher.swift in Sources */,
 				5EAD80D423377F1400E10181 /* SceneDelegate.swift in Sources */,
 				5EAD80D623377F1400E10181 /* ContentView.swift in Sources */,
 			);
