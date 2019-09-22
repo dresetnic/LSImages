@@ -17,14 +17,16 @@ struct AllImagesView: View {
     }
     
     var body: some View {
+        GeometryReader { geometry in
             List {
-                if viewModel.dataSource.isEmpty {
-                    emptySection
+                if self.viewModel.dataSource.isEmpty {
+                    self.emptySection
                 } else {
-                    imagesSection
+                    self.imagesSection(geometry: geometry)
                 }
             }
             .listStyle(PlainListStyle())
+        }
     }
 }
 
@@ -36,10 +38,10 @@ private extension AllImagesView {
         }
     }
     
-    var imagesSection: some View {
+    func imagesSection(geometry: GeometryProxy) -> some View {
         Section {
             ForEach(viewModel.dataSource){ model in
-                ImageRow(viewModel: model)
+                ImageRow(viewModel: model, geometry: geometry)
             }
         }
     }

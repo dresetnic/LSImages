@@ -8,8 +8,9 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
-func decode<T: Decodable>(_ data: Data) -> AnyPublisher<T, LiveSurfaceImagesError> {
+func jsonDecode<T: Decodable>(_ data: Data) -> AnyPublisher<T, LiveSurfaceImagesError> {
   let decoder = JSONDecoder()
   decoder.dateDecodingStrategy = .secondsSince1970
 
@@ -20,4 +21,3 @@ func decode<T: Decodable>(_ data: Data) -> AnyPublisher<T, LiveSurfaceImagesErro
     }
     .eraseToAnyPublisher()
 }
-

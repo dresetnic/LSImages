@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct ImageDownloadResponse: Codable {
+    let name: String
+    let data: Data
+}
+
 struct LiveSurfaceImagesResponse: Codable {
     let images: [String: ImageInfo]
 }

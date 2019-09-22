@@ -21,6 +21,10 @@ struct ImageRowViewModel: Identifiable {
         return imageInfo.name
     }
     
+    var fileName: String {
+        return imageInfo.image
+    }
+    
     var category: String {
         #warning("Implement Category")
         return "Implement Category"
@@ -56,6 +60,6 @@ struct RowInfo: Identifiable{
     }
     
     var id: String {
-         return String(section)
-     }
+        return String(section)
+    }
 }

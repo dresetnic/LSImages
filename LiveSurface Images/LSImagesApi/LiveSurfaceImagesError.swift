@@ -12,3 +12,8 @@ enum LiveSurfaceImagesError: Error {
   case parsing(description: String)
   case network(description: String)
 }
+
+enum LiveSurfaceImageDownloadError: Error {
+  case parsing(description: String)
+  case network(description: String)
+}
