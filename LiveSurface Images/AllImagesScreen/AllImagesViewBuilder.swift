@@ -8,6 +8,6 @@
 
 import SwiftUI
 
-enum AllImagesWeatherBuilder {
-    case <#case#>
+enum ImageDetailsBuilder {
+
 }

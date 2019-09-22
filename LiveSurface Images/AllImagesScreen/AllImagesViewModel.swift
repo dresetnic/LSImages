@@ -11,14 +11,18 @@ import Combine
 
 class AllImagesViewModel: ObservableObject{
     
-    @Published var dataSource: [ImageRowViewModel] = []
+    @Published var dataSource: [RowInfo] = []
     
     private let liveSurfaceImageFetcher: LiveSurfaceImagesFetchable
     
     private var disposables = Set<AnyCancellable>()
     
-    init(imagesFetcher: LiveSurfaceImagesFetchable){
-        self.liveSurfaceImageFetcher = imagesFetcher
+    init(
+      imageFetcher: LiveSurfaceImagesFetchable,
+      scheduler: DispatchQueue = DispatchQueue(label: "AllImagesViewModel")
+    ) {
+      self.liveSurfaceImageFetcher = imageFetcher
+        fetchImages()
     }
     
     func fetchImages(){
@@ -33,7 +37,6 @@ class AllImagesViewModel: ObservableObject{
                     guard let self = self else { return }
                     switch value {
                     case .failure:
-                        // 6
                         self.dataSource = []
                     case .finished:
                         break
@@ -41,13 +44,17 @@ class AllImagesViewModel: ObservableObject{
                 },
                 receiveValue: { [weak self] imagesInfo in
                     guard let self = self else { return }
-                    self.dataSource = imagesInfo
-                    // 7
+                    
+                    let chunkedData = imagesInfo.chunked(into: 3)
+                    
+                    var chunkId = 0
+                    var result:[RowInfo] = []
+                    for chunk in chunkedData {
+                        result.append(RowInfo(rowsItems: chunk, section: chunkId))
+                        chunkId += 1
+                    }
+                    self.dataSource = result
             })
-
-            // 8
             .store(in: &disposables)
-        
-        
     }
 }

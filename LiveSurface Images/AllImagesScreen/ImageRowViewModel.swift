@@ -22,6 +22,7 @@ struct ImageRowViewModel: Identifiable {
     }
     
     var category: String {
+        #warning("Implement Category")
         return "Implement Category"
     }
     
@@ -42,4 +43,19 @@ extension ImageRowViewModel: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.id)
     }
+}
+
+struct RowInfo: Identifiable{
+    
+    var rowsItems: [ImageRowViewModel]
+    var section: Int
+    
+    init(rowsItems: [ImageRowViewModel], section: Int) {
+        self.rowsItems = rowsItems
+        self.section = section
+    }
+    
+    var id: String {
+         return String(section)
+     }
 }
